@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 80vw;
+  width: 90vw;
   height: 50vh;
   gap: 1.5vw;
   background-color: rgb(209, 190, 176, 0.3);
@@ -33,6 +33,7 @@ padding: 0.5vw
   border-radius: 5px;
   opacity: 0.5;
   filter: grayscale(100%);
+  object-fit: cover;
 }
 
 .cityInfo > * {
@@ -68,7 +69,7 @@ padding: 0.5vw
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 50vw;
+  width: 60vw;
   height: 55vh;
   gap: 1.5vw;
   background-color: rgb(209, 190, 176, 0.3);
@@ -102,7 +103,7 @@ padding: 0.5vw
   }
 
   .cityInfo > h2, .cityInfo > h3 {
-    font-size: 2.3vw;
+    font-size: 2.1vw;
   }
 
    .cityInfo > h4  {

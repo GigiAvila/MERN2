@@ -52,14 +52,14 @@ const ForecastPanel = () => {
   };
 
   return (
-    <div>
+    <>
       <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
       <ForecastCard
         showData={showData}
         loading={loading}
         forecast={forecast}
       />
-    </div>
+    </>
   );
 };
 

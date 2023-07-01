@@ -1,10 +1,9 @@
 import React from 'react';
 import Spinner from './Spinner';
 
-import cityImage from '../assets/city.jpg';
 import '../assets/CardDetail.css';
 
-const CardDetail = ({ loading, weather }) => {
+const CardDetail = ({ loading, weather, children }) => {
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;
@@ -22,7 +21,7 @@ const CardDetail = ({ loading, weather }) => {
   return (
     <div className='cityCardContainer'>
       <div className='imgCityContainer'>
-        <img src={cityImage} alt="cityImg" />
+        {children}
       </div>
       <div className='cityInfo'>
         <h2>{weather.name}, {weather.sys.country}</h2>
@@ -44,4 +43,3 @@ const CardDetail = ({ loading, weather }) => {
 };
 
 export default CardDetail;
-

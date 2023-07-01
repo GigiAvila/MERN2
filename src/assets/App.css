@@ -1,7 +1,9 @@
 
 :root {
   --background-dark:  #272D2D;
-  --background-clear:  #FFFFFC;
+  --background-light:  #FFFFFC;
+  --text-light:  #272D2D;
+  --text-dark:  #FFFFFC;
   --text-color: #383F51;
   --secondary-text-color: #DDDBF1;
   --other-text-color: #D1BEB0;

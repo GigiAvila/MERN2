@@ -78,4 +78,3 @@ const ForecastByLocation = () => {
 };
 
 export default ForecastByLocation;
-

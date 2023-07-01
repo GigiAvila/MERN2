@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CityFilter from './CityFilter';
 import CardDetail from './CardDetail';
-import Header from './Header';
+import UnsplashPhotos from './Unsplash';
 
 const API_key = "8a6d1f5532a32b3653fcb67a7e726d99";
 
@@ -52,13 +52,13 @@ const WeatherPanel = () => {
   };
 
   return (
-    <div>
+    <div className='weatherPanelDiv'>
       <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
-      <CardDetail
-        showData={showData}
-        loading={loading}
-        weather={weather}
-      />
+      <CardDetail showData={showData} loading={loading} weather={weather}>
+        {showData && (
+          <UnsplashPhotos query={weather.name} />
+        )}
+      </CardDetail>
     </div>
   );
 };

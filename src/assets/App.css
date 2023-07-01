@@ -24,7 +24,7 @@ body {
 }
 
 #root {
-  background-color: white;
+  background-color:  #FFFFFC;
   display: flex;
   justify-content: center;
   align-items: center;

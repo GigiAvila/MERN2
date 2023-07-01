@@ -1,0 +1,17 @@
+.navbar {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-evenly;
+  gap: 5vw;
+  padding: 1rem;
+
+}
+
+.navbar > .navLink {
+  color:#272D2D;
+  font-weight: bold;
+  font-size: 2vw;
+}

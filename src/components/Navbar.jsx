@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <NavLink className="navLink" to="">Ahora </NavLink>
       <NavLink className="navLink" to="DayForecast">Próximas horas </NavLink>
-      <NavLink className="navLink" to="WeekForecast"> 5 días </NavLink>
+      <NavLink className="navLink" to="WeekForecast"> Próximos días </NavLink>
     </nav>
   )
 }

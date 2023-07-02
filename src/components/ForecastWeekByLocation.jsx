@@ -1,17 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
-import CardDetail from './CardDetail';
+import ForecastWeekCard from './ForecastWeekCard';
 import Spinner from './Spinner';
-import UnsplashPhotos from './Unsplash';
 
 const API_KEY = "8a6d1f5532a32b3653fcb67a7e726d99";
 
-const WeatherByLocation = () => {
+const ForecastWeekByLocation = () => {
   const [location, setLocation] = useState(null);
-  const [permissionDenied, setPermissionDenied] = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [cityImage, setCityImage] = useState(null);
 
   useEffect(() => {
     const getLocation = () => {
@@ -23,12 +19,11 @@ const WeatherByLocation = () => {
           },
           (error) => {
             console.log(error);
-            setPermissionDenied(true);
             setLoading(false);
           }
         );
       } else {
-        console.log("No es posible la geolocalización en este navegador");
+        console.log("Geolocation is not supported by this browser.");
         setLoading(false);
       }
     };
@@ -40,7 +35,7 @@ const WeatherByLocation = () => {
     if (location !== null) {
       const { latitude, longitude } = location;
 
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&lang=es`;
+      const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&lang=es`;
 
       fetch(url)
         .then((response) => {
@@ -50,10 +45,17 @@ const WeatherByLocation = () => {
           return response.json();
         })
         .then((data) => {
-          setWeatherData(data);
+          // Filter the data to keep only the elements at positions 0, 8, 15, 23, 31, and 39
+          const filteredData = {
+            ...data,
+            list: data.list.filter((item, index) =>
+              [0, 8, 15, 23, 31, 39].includes(index)
+            ),
+          };
+
+          setForecastData(filteredData);
           setLoading(false);
-          const imageUrl = data.weather[0].name;
-          setCityImage(imageUrl);
+          console.log(filteredData);
         })
         .catch((error) => {
           console.log(error);
@@ -63,30 +65,24 @@ const WeatherByLocation = () => {
   }, [location]);
 
   const handleLocationRequest = () => {
-    setPermissionDenied(false);
     setLoading(true);
     setLocation(null);
   };
 
   return (
-    <>
-      {permissionDenied ? (
-        <p>¡Debes activar los permisos de geolocalización en tu navegador!</p>
-      ) : loading ? (
+    <div>
+      {loading ? (
         <Spinner />
-      ) : weatherData ? (
-        <>
-          <CardDetail weather={weatherData} showData={true} loading={loading} cityImage={cityImage}>
-            <UnsplashPhotos query={weatherData.weather[0].name} />
-          </CardDetail>
-        </>
+      ) : forecastData && forecastData.list.length > 0 ? (
+        <ForecastWeekCard forecast={forecastData} />
       ) : (
         <div>
+          <p>No se encontraron datos de pronóstico.</p>
           <button onClick={handleLocationRequest}>Obtener ubicación</button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default WeatherByLocation;
+export default ForecastWeekByLocation;

@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import '../assets/ForecastCard.css';
 import Spinner from './Spinner';
 
-const ForecastCard = ({ loading, forecast }) => {
+const ForecastWeekCard = ({ loading, forecast, infoSource }) => {
   const { list } = forecast;
 
   const today = new Date();
@@ -12,13 +11,13 @@ const ForecastCard = ({ loading, forecast }) => {
   const year = today.getFullYear();
   const myDate = `${day}/${month}/${year}`;
 
-  const [moreItems, setmoreItems] = useState([]);
+  const [moreItems, setMoreItems] = useState([]);
 
   const handleToggleDetails = (index) => {
     if (moreItems.includes(index)) {
-      setmoreItems(moreItems.filter((item) => item !== index));
+      setMoreItems(moreItems.filter((item) => item !== index));
     } else {
-      setmoreItems([...moreItems, index]);
+      setMoreItems([...moreItems, index]);
     }
   };
 
@@ -48,6 +47,16 @@ const ForecastCard = ({ loading, forecast }) => {
     return `${formattedDay} de ${formattedMonth}`;
   };
 
+  const isNewDay = (index) => {
+    if (infoSource === 'DayForecast' || infoSource === 'ForecastPanel') {
+      // Lógica existente para comparar si es un nuevo día
+      return list[index - 1] && list[index].dt_txt.slice(11, 16) < list[index - 1].dt_txt.slice(11, 16);
+    } else {
+      // Si proviene de WeekForecastByLocation o WeekForecastPanel, mostrar siempre el formato de fecha
+      return true;
+    }
+  };
+
   if (loading) {
     return <Spinner />;
   }
@@ -57,17 +66,17 @@ const ForecastCard = ({ loading, forecast }) => {
   }
 
   return (
-    <div className='ForecastCardContainer'>
+    <div className={`ForecastCardContainer ${infoSource}`}>
       <div className='cityInfo'>
         <h2>Pronóstico extendido para <span>{forecast.city.name}, {forecast.city.country}</span></h2>
         <h3>{myDate}</h3>
       </div>
       <ul className='weatherForecast'>
         {list.slice(0, 12).map((item, index) => {
-          const isNewDay = list[index - 1] && item.dt_txt.slice(11, 16) < list[index - 1].dt_txt.slice(11, 16);
+          const showDate = isNewDay(index);
           return (
             <li className='weatherForecastItem' key={index}>
-              {isNewDay && (
+              {showDate && (
                 <div className='newDayContainer'>
                   <p>{formatDate(item.dt_txt)}</p>
                 </div>
@@ -97,4 +106,4 @@ const ForecastCard = ({ loading, forecast }) => {
   );
 };
 
-export default ForecastCard;
+export default ForecastWeekCard;

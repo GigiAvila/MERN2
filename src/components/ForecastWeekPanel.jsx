@@ -29,7 +29,7 @@ const ForecastWeekPanel = () => {
           throw new Error(forecastDataResponse.statusText);
         }
         const forecastData = await forecastDataResponse.json();
-        // Filter the data to keep only the elements at positions 0, 8, 15, 23, 31, and 39
+
         const filteredData = {
           ...forecastData,
           list: forecastData.list.filter((item, index) =>

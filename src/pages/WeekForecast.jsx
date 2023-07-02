@@ -15,7 +15,7 @@ const WeekForecast = () => {
   };
 
   return (
-    <div className='WeekForecastContainer'>
+    <div className='WeekForecastContainer1'>
       <button className="buttonToggle" onClick={handleToggleForecastPanel}>
         {showForecastPanel ? 'Volver a mi ciudad' : 'Consulta el clima en otra ciudad'}
       </button>

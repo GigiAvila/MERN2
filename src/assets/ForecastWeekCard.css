@@ -1,0 +1,163 @@
+
+.ForecastWeekCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+  gap: 2vw;
+  border-radius: 5px;
+  overflow: hidden;
+  
+}
+
+
+.ForecastWeekCardContainer  > h2 {
+  font-size: 2vw;
+  padding: 1rem;
+}
+
+.ForecastWeekCardContainer  > h2 > span {
+  font-size: 3vw;
+}
+
+.weekForecastUl {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: auto;
+  margin: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+.weekForecastItem {
+  color:#272D2D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  padding: 0.2rem;
+  border: 0.5px dotted grey;
+  border-radius: 5px;
+  margin: 0.5vw;
+  padding: 0.5vw;
+  overflow: hidden;
+ 
+}
+
+
+.weekForecastItem > * {
+  color:#272D2D;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  width: 90vw;
+  height: auto;
+  padding: 0.2rem;
+
+
+}
+
+
+.weekForecastItem > h2 {
+  font-size: 2.2vw;
+}
+
+
+.weekForecastItem > h3 {
+  font-size: 3vw;
+  font-weight: bold;
+ 
+}
+
+.weekForecastItem > p {
+  font-size: 1.8vw;
+  
+}
+
+.weekForecastItem > h5 {
+  font-size: 1.5vw;
+  text-align: center;
+ }
+
+
+.iconWeekForecastContainer {
+  width: 5vw;
+}
+
+.iconWeekForecastContainer > img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+
+
+
+@media screen and (min-width: 1023px) {
+
+  .weekForecastUl {
+    flex-wrap: nowrap;
+  }
+
+  .weekForecastItem {
+    color:#272D2D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: auto;
+    padding: 0.2rem;
+    border: transparent;
+    border-radius: 0px;
+    border-right: 0.5px dotted grey;
+    border-left: 0.5px dotted grey;
+    margin: 0;
+  
+   
+  }
+
+  
+.weekForecastItem > h2 {
+  font-size: 2vw;
+}
+
+
+.weekForecastItem > h3 {
+  font-size: 3vw;
+  font-weight: bold;
+ 
+}
+
+.weekForecastItem > p {
+  font-size: 1vw;
+  
+}
+
+.weekForecastItem > h5 {
+  font-size: 1vw;
+  text-align: center;
+ }
+
+
+.iconWeekForecastContainer {
+  width: 5vw;
+}
+
+.iconWeekForecastContainer > img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+  
+}

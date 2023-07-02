@@ -7,9 +7,9 @@ import UnsplashPhotos from './Unsplash';
 const API_KEY = "8a6d1f5532a32b3653fcb67a7e726d99";
 
 const WeatherByLocation = () => {
-  const [location, setLocation] = useState(null);
+  const [myLocation, setMyLocation] = useState(null);
   const [permissionDenied, setPermissionDenied] = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherByLocation, setWeatherByLocation] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cityImage, setCityImage] = useState(null);
 
@@ -19,7 +19,7 @@ const WeatherByLocation = () => {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             const { latitude, longitude } = position.coords;
-            setLocation({ latitude, longitude });
+            setMyLocation({ latitude, longitude });
           },
           (error) => {
             console.log(error);
@@ -37,8 +37,8 @@ const WeatherByLocation = () => {
   }, []);
 
   useEffect(() => {
-    if (location !== null) {
-      const { latitude, longitude } = location;
+    if (myLocation !== null) {
+      const { latitude, longitude } = myLocation;
 
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&lang=es`;
 
@@ -50,7 +50,7 @@ const WeatherByLocation = () => {
           return response.json();
         })
         .then((data) => {
-          setWeatherData(data);
+          setWeatherByLocation(data);
           setLoading(false);
           const imageUrl = data.weather[0].name;
           setCityImage(imageUrl);
@@ -60,12 +60,12 @@ const WeatherByLocation = () => {
           setLoading(false);
         });
     }
-  }, [location]);
+  }, [myLocation]);
 
   const handleLocationRequest = () => {
     setPermissionDenied(false);
     setLoading(true);
-    setLocation(null);
+    setMyLocation(null);
   };
 
   return (
@@ -74,10 +74,10 @@ const WeatherByLocation = () => {
         <p>¡Debes activar los permisos de geolocalización en tu navegador!</p>
       ) : loading ? (
         <Spinner />
-      ) : weatherData ? (
+      ) : weatherByLocation ? (
         <>
-          <CardDetail weather={weatherData} showData={true} loading={loading} cityImage={cityImage}>
-            <UnsplashPhotos query={weatherData.weather[0].name} />
+          <CardDetail weather={weatherByLocation} showData={true} loading={loading} cityImage={cityImage}>
+            <UnsplashPhotos query={weatherByLocation.weather[0].name} />
           </CardDetail>
         </>
       ) : (
@@ -88,5 +88,4 @@ const WeatherByLocation = () => {
     </>
   );
 };
-
 export default WeatherByLocation;

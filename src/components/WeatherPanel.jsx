@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CityFilter from './CityFilter';
@@ -7,30 +8,30 @@ import UnsplashPhotos from './Unsplash';
 const API_key = "8a6d1f5532a32b3653fcb67a7e726d99";
 
 const WeatherPanel = () => {
-  const [weather, setWeather] = useState([]);
+  const [weatherByCity, setWeatherByCity] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showData, setShowData] = useState(false);
-  const [location, setLocation] = useState("");
+  const [locationInput, setLocationInput] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      if (location === "") {
+      if (locationInput === "") {
         return;
       }
 
       setLoading(true);
 
-      const urlWeather = `http://api.openweathermap.org/data/2.5/weather?appid=${API_key}&lang=es&q=${location}`;
+      const urlWeather = `http://api.openweathermap.org/data/2.5/weather?appid=${API_key}&lang=es&q=${locationInput}`;
 
       try {
         const weatherDataResponse = await fetch(urlWeather);
         if (!weatherDataResponse.ok) {
           throw new Error(weatherDataResponse.statusText);
         }
-        const weatherData = await weatherDataResponse.json();
-        setWeather(weatherData);
-        console.log(weatherData);
+        const weatherDataByCity = await weatherDataResponse.json();
+        setWeatherByCity(weatherDataByCity);
+        console.log(weatherDataByCity);
         setLoading(false);
         setShowData(true);
       } catch (error) {
@@ -41,10 +42,10 @@ const WeatherPanel = () => {
     };
 
     fetchData();
-  }, [location]);
+  }, [locationInput]);
 
-  const handleFilterChange = (loc) => {
-    setLocation(loc);
+  const handleFilterChange = (location) => {
+    setLocationInput(location);
   };
 
   const handlePageChange = (page) => {
@@ -52,14 +53,16 @@ const WeatherPanel = () => {
   };
 
   return (
-    <div className='weatherPanelDisplay'>
+    <>
       <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
-      <CardDetail showData={showData} loading={loading} weather={weather}>
-        {showData && (
-          <UnsplashPhotos query={weather.name} />
-        )}
-      </CardDetail>
-    </div>
+      <div className='weatherPanelDisplay'>
+        <CardDetail showData={showData} loading={loading} weather={weatherByCity}>
+          {showData && (
+            <UnsplashPhotos query={weatherByCity.name} />
+          )}
+        </CardDetail>
+      </div>
+    </>
   );
 };
 

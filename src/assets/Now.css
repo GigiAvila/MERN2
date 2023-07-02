@@ -1,3 +1,13 @@
+@keyframes slideUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .NowContainer {
   display: flex;
@@ -8,7 +18,9 @@
   height: 75vh;
   background-size: cover;
   background-position: center;
+  animation: slideUpAnimation 1s ease-out;
 }
+
 
 .form-container {
   width: 90vw;
@@ -100,20 +112,40 @@ border-radius: 5px;
 }
 
 .buttonToggle {
-  background-color: transparent;
-  color:#272D2D;
+  background-color: rgb(39, 45, 45, 0.2);;
   border: transparent;
-  margin: 0 auto;
-  width: 100vw;
-  height: auto;
-  font-size: 1.5vw;
+  width: 10vw;
+  height: 10vh;
+  font-size: 1.3vw;
+  text-align: center;
+  color: #272D2D;
+  padding: 0.5rem;
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
 }
 
 .buttonToggle:focus{
   outline: none;
+ 
 }
 
 .buttonToggle:hover {
-font-size: 2vw;
+font-size: 1.3vw;
+border-radius: 5px;
+background-color: #272D2D;
+color: #FFFFFC;
+margin: 0 1rem
 }
 
+
+@media screen and (min-width: 1023px) {
+  .buttonToggle{
+    width: 8vw;
+    height: 8vh;
+    font-size: 0.8vw;
+  }
+  .buttonToggle:hover {
+    font-size: 0.8vw;
+  }
+}

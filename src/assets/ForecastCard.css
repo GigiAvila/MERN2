@@ -1,3 +1,13 @@
+@keyframes slideUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .ForecastCardContainer {
   display: flex;
@@ -9,6 +19,7 @@
   gap: 2vw;
   border-radius: 5px;
   overflow: auto;
+  animation: slideUpAnimation 1s ease-out;
 }
 
 
@@ -46,15 +57,18 @@
 
 .cityInfo > h2 {
   font-size: 2vw;
+  color: #272D2D;
 }
 
 .cityInfo > h2 > span {
   font-size: 3vw;
+  color: #272D2D;
 }
 
 .cityInfo > h3, .cityInfo > h4  {
   font-size: 3.5vw;
   font-weight: bold;
+  color: #272D2D;
  
 }
 
@@ -81,6 +95,10 @@
   padding: 0.2rem;
   border-bottom: 0.5px dotted grey;
 
+}
+
+.weatherForecastItem:hover {
+  background-color: rgba(255, 255, 252, 0.3);
 }
 
 .principalInfo, .additionalInfo {
@@ -166,7 +184,7 @@ font-size: 2vw;
 
 .newDayContainer {
   width: 90vw;
-  background-color:#BEB7A4;
+  background-color: rgba(255, 255, 252, 0.5);
   padding: 0.5vw;
 }
 .newDayContainer > p {

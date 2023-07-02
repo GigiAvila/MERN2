@@ -1,9 +1,19 @@
 footer {
-  color:  #272D2D;
-  font-size: 1.2vw;
+  color:  #fffffc;
+  font-size: 1.6vw;
   padding: 1.5rem;
   width: 100vw;
   height: auto;
   text-align: end;
+  position: fixed;
+  bottom: 0;
+  
 
+}
+
+@media screen and (min-width: 1023px) {
+
+footer {
+  font-size: 1.2vw;
+}
 }

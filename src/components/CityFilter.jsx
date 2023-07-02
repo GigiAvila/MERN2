@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 
 const CityFilter = ({ onFilterChange }) => {
-  const [searchCity, setSearchCity] = useState("");
+  const [searchCity, setSearchCity] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    onFilterChange(searchCity);
+    if (searchCity.trim() !== '') {
+      onFilterChange(searchCity);
+      setSearchCity('');
+    }
   };
 
   return (
     <form className='form-container' onSubmit={onSubmit}>
       <label className='searchCityLabel'>
         <input
-          type="text"
+          type='text'
           className='searchCityInput'
-          placeholder='Introduce tu ciudad'
+          placeholder='Introduce una ciudad'
           value={searchCity}
           onChange={(e) => setSearchCity(e.target.value)}
         />

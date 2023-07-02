@@ -11,9 +11,9 @@ const Header = () => {
   return (
 
     <div className='header'>
-      <CurrentTime />
+      {/* <CurrentTime /> */}
       <Title />
-      <ColorMode />
+      {/* <ColorMode /> */}
     </div>
 
 

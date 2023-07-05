@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CityFilter from './CityFilter';
 import ForecastCard from './ForecastCard';
 import Header from './Header';
+import '../assets/ForecastPanel.css'
 
 const API_key = "8a6d1f5532a32b3653fcb67a7e726d99";
 
@@ -52,14 +53,14 @@ const ForecastPanel = () => {
   };
 
   return (
-    <>
+    <div className='ForecastPanelContainer'>
       <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
       <ForecastCard
         showData={showData}
         loading={loading}
         forecast={forecast}
       />
-    </>
+    </div>
   );
 };
 

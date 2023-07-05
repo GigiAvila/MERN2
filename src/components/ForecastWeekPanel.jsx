@@ -59,14 +59,14 @@ const ForecastWeekPanel = () => {
   };
 
   return (
-    <>
+    <div className='ForecastWeekPanel'>
       <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
       <ForecastWeekCard
         showData={showData}
         loading={loading}
         forecast={forecast}
       />
-    </>
+    </div>
   );
 };
 

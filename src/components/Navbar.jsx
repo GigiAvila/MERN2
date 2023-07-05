@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import '../assets/Navbar.css';
 import { NavLink } from 'react-router-dom'
 

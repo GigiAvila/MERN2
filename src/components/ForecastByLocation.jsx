@@ -23,7 +23,7 @@ const ForecastByLocation = () => {
           }
         );
       } else {
-        console.log("Geolocation is not supported by this browser.");
+        console.log("No es posible usar la geolocalización en este navegador");
         setLoading(false);
       }
     };
@@ -62,7 +62,7 @@ const ForecastByLocation = () => {
   };
 
   return (
-    <div>
+    <div className='ForecastByLocationContainer'>
       {loading ? (
         <Spinner />
       ) : forecastData && forecastData.list.length > 0 ? (

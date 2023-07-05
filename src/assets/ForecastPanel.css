@@ -1,0 +1,13 @@
+.ForecastWeekPanel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 70vh;
+
+}
+
+.ForecastWeekPanel > .lds-roller{
+  margin:  auto auto;
+}

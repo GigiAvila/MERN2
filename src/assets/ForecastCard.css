@@ -1,3 +1,17 @@
+
+.ForecastByLocationContainer  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.ForecastByLocationContainer > .lds-roller{
+  margin:  auto auto;
+}
+
+
 @keyframes slideUpAnimation {
   0% {
     opacity: 0;

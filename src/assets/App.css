@@ -26,14 +26,29 @@ body {
 }
 
 #root {
-  background-color:  #FFFFFC;
   display: inline-block;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+
+#root::before {
+  content: "";
   background-image: url(../assets/701_mist.jpg);
   background-size: cover;
   background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+#root > * {
+  position: relative;
+  z-index: 1;
 }

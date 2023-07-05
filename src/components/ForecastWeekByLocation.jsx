@@ -70,7 +70,7 @@ const ForecastWeekByLocation = () => {
   };
 
   return (
-    <div>
+    <div className='ForecastWeekByLocationContainer'>
       {loading ? (
         <Spinner />
       ) : forecastData && forecastData.list.length > 0 ? (

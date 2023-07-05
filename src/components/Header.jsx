@@ -2,8 +2,8 @@ import React from 'react';
 import '../assets/Header.css';
 
 import Title from './Title';
-import ColorMode from './ColorMode';
-import CurrentTime from './CurrentTime';
+// import ColorMode from './ColorMode';
+// import CurrentTime from './CurrentTime';
 
 
 

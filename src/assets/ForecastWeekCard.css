@@ -1,3 +1,21 @@
+
+.ForecastWeekByLocationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.ForecastWeekByLocationContainer > .lds-roller,
+.ForecastWeekPanel > .lds-roller{
+  margin:  auto auto;
+}
+
+
+
+
+
 @keyframes slideUpAnimation {
   0% {
     opacity: 0;

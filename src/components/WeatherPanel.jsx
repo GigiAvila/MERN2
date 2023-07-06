@@ -54,7 +54,7 @@ const WeatherPanel = () => {
 
   return (
     <>
-      <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} />
+      <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} weatherByCity={weatherByCity.name} />
       <div className='weatherPanelDisplay'>
         <CardDetail showData={showData} loading={loading} weather={weatherByCity}>
           {showData && (

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const CityFilter = ({ onFilterChange }) => {
@@ -10,20 +11,24 @@ const CityFilter = ({ onFilterChange }) => {
       setSearchCity('');
     }
   };
-
   return (
-    <form className='form-container' onSubmit={onSubmit}>
-      <label className='searchCityLabel'>
-        <input
-          type='text'
-          className='searchCityInput'
-          placeholder='Introduce una ciudad'
-          value={searchCity}
-          onChange={(e) => setSearchCity(e.target.value)}
-        />
-      </label>
-      <button className='submitButton' type='submit'>Buscar</button>
-    </form>
+    <>
+
+
+
+      <form className='form-container' onSubmit={onSubmit}>
+        <label className='searchCityLabel'>
+          <input
+            type='text'
+            className='searchCityInput'
+            placeholder='Introduce una ciudad'
+            value={searchCity}
+            onChange={(e) => setSearchCity(e.target.value)}
+          />
+        </label>
+        <button className='submitButton' type='submit'>Buscar</button>
+      </form>
+    </>
   );
 };
 

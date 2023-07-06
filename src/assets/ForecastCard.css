@@ -178,24 +178,6 @@ filter: grayscale(100%);
 }
 
 
-.buttonToggle {
-  background-color: transparent;
-  color:#272D2D;
-  border: transparent;
-  margin: 0 auto;
-  width: 100vw;
-  height: auto;
-  font-size: 1.5vw;
-}
-
-.buttonToggle:focus{
-  outline: none;
-}
-
-.buttonToggle:hover {
-font-size: 2vw;
-}
-
 .newDayContainer {
   width: 90vw;
   background-color: rgba(255, 255, 252, 0.5);

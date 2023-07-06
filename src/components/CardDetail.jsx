@@ -28,7 +28,7 @@ const CardDetail = ({ loading, weather, children }) => {
         <h3>{myDate}</h3>
         <h4>{(weather.main.temp - 273.15).toFixed(1)}°C</h4>
         <div className='iconWeatherContainer'>
-          <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="weatherIcon" />
+          <img src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="weatherIcon" />
           {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}
         </div>
         <div className='weatherInfo'>

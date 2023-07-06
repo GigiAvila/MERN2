@@ -22,7 +22,7 @@ const WeatherPanel = () => {
 
       setLoading(true);
 
-      const urlWeather = `http://api.openweathermap.org/data/2.5/weather?appid=${API_key}&lang=es&q=${locationInput}`;
+      const urlWeather = `https://api.openweathermap.org/data/2.5/weather?appid=${API_key}&lang=es&q=${locationInput}`;
 
       try {
         const weatherDataResponse = await fetch(urlWeather);
@@ -54,7 +54,7 @@ const WeatherPanel = () => {
 
   return (
     <>
-      <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} weatherByCity={weatherByCity.name} />
+      <CityFilter onFilterChange={handleFilterChange} onPageChange={handlePageChange} weatherByCity={weatherByCity} />
       <div className='weatherPanelDisplay'>
         <CardDetail showData={showData} loading={loading} weather={weatherByCity}>
           {showData && (

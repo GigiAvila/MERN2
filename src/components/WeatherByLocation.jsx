@@ -51,6 +51,7 @@ const WeatherByLocation = () => {
         })
         .then((data) => {
           setWeatherByLocation(data);
+          console.log(data);
           setLoading(false);
           const imageUrl = data.weather[0].name;
           setCityImage(imageUrl);

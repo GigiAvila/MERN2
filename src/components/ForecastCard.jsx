@@ -76,7 +76,7 @@ const ForecastCard = ({ loading, forecast }) => {
                 <h2>{item.dt_txt.slice(11, 16)}</h2>
                 <h3>{(item.main.temp - 273.15).toFixed(1)}°</h3>
                 <div className='iconForecastContainer'>
-                  <img src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="weatherIcon" title={item.weather[0].description.charAt(0).toUpperCase() + item.weather[0].description.slice(1)} />
+                  <img src={`https://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="weatherIcon" title={item.weather[0].description.charAt(0).toUpperCase() + item.weather[0].description.slice(1)} />
                 </div>
                 <p>💧{(item.pop.toFixed(1)) * 100}%</p>
                 <i className='toggleIcon' onClick={() => handleToggleDetails(index)}>⬇️</i>

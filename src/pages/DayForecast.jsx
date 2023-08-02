@@ -15,15 +15,15 @@ const DayForecast = () => {
   };
 
   return (
-    <div className=''>
-      <button className="buttonToggle" onClick={handleToggleForecastPanel}>
-        {showForecastPanel ? 'Volver a mi ciudad' : 'Consulta el clima en otra ciudad'}
-      </button>
+    <div className='dayForecastContainer'>
       {showForecastPanel ? (
         <ForecastPanel onForecastInfoChange={handleForecastInfoChange} />
       ) : (
         <ForecastByLocation onForecastInfoChange={handleForecastInfoChange} />
       )}
+      <button className="buttonToggle" onClick={handleToggleForecastPanel}>
+        {showForecastPanel ? 'Volver a mi ciudad' : 'Consulta el clima en otra ciudad'}
+      </button>
     </div>
   );
 };

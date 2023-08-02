@@ -17,14 +17,14 @@ const Now = () => {
 
   return (
     <div className='NowContainer'>
-      <button className='buttonToggle' onClick={handleToggleWeatherPanel}>
-        {showWeatherPanel ? 'Volver a mi ciudad' : 'Consulta el clima en otra ciudad'}
-      </button>
       {showWeatherPanel ? (
         <WeatherPanel onWeatherInfoChange={handleWeatherInfoChange} weatherInfo={weatherInfo} />
       ) : (
         <WeatherByLocation onWeatherInfoChange={handleWeatherInfoChange} />
       )}
+      <button className='buttonToggle' onClick={handleToggleWeatherPanel}>
+        {showWeatherPanel ? 'Volver a mi ciudad' : 'Consulta el clima en otra ciudad'}
+      </button>
     </div>
   );
 };

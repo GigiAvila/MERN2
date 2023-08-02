@@ -1,12 +1,13 @@
 footer {
   color:#272D2D;
-  font-size: 1.6vw;
+  font-size: 2.5vw;
   padding: 1vh;
   width: 100vw;
-  height: 10vh;
+  height: auto;
   text-align: end;
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  align-self: flex-end;
   
 
 }

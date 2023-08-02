@@ -1,4 +1,14 @@
 
+.WeekForecastContainer1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+
+}
+
 .ForecastWeekByLocationContainer {
   display: flex;
   justify-content: center;
@@ -42,13 +52,13 @@
 
 
 .ForecastWeekCardContainer  > h2 {
-  font-size: 2vw;
+  font-size: 3vw;
   padding: 1rem;
   color: #272D2D;
 }
 
 .ForecastWeekCardContainer  > h2 > span {
-  font-size: 3vw;
+  font-size: 4.5vw;
   color: #272D2D;
 }
 

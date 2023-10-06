@@ -1,28 +1,31 @@
-
-:root {
-  --background-dark:  #272D2D;
-  --background-light:  #FFFFFC;
-  --text-light:  #272D2D;
-  --text-dark:  #FFFFFC;
-  --text-color: #383F51;
-  --secondary-text-color: #DDDBF1;
-  --other-text-color: #D1BEB0;
-  --detail-color: #AB9F9D;
-
+@font-face {
+  font-family: 'Queensides';
+  src: url('./Queensides.ttf') format('truetype');
 }
 
+:root {
+  --background-dark: #272d2d;
+  --background-light: #fffffc;
+  --text-light: #272d2d;
+  --text-dark: #fffffc;
+  --text-color: #383f51;
+  --secondary-text-color: #dddbf1;
+  --other-text-color: #d1beb0;
+  --detail-color: #ab9f9d;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Queensides', sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color:  #FFFFFC;
+  background-color: #fffffc;
 }
 
 #root {
@@ -33,8 +36,12 @@ body {
 }
 
 #root::before {
-  content: "";
-  background-image: url(../assets/background.jpg);
+  content: '';
+  background: linear-gradient(
+    228deg,
+    rgba(140, 115, 191, 1) 0%,
+    rgba(55, 174, 164, 1) 100%
+  );
   background-size: cover;
   background-position: center;
   position: absolute;

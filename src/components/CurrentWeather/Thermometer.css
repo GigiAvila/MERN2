@@ -1,0 +1,111 @@
+.thermometer {
+  width: 28px;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    #ffffff,
+    #f7eb97,
+    #ffee00,
+    #ffbf00,
+    #ff8000
+  );
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.minTemp,
+.feelsLike,
+.maxTemp {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  left: 20px;
+}
+
+.minTemp {
+  bottom: 20px;
+}
+.minText {
+  bottom: 20px;
+  font-size: 4vw;
+}
+
+.feelsLike {
+  bottom: 60px;
+}
+
+.feelsText {
+  bottom: 60px;
+  font-size: 4vw;
+}
+
+.maxTemp {
+  top: 20px;
+}
+
+.maxText {
+  top: 0px;
+  font-size: 4vw;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 45px;
+  padding: 0 5px;
+  font-weight: bold;
+  min-width: 300px;
+  height: 120px;
+  position: absolute;
+}
+
+.temperature > * {
+  position: absolute;
+}
+em {
+  font-size: 4vw;
+}
+
+@media screen and (min-width: 1024px) {
+  .thermometer {
+    height: 200px;
+  }
+
+  .temperature {
+    height: 200px;
+  }
+
+  .minTemp {
+    bottom: 20px;
+  }
+  .minText {
+    bottom: 15px;
+    font-size: 1.5vw;
+  }
+
+  .feelsLike {
+    bottom: 100px;
+  }
+
+  .feelsText {
+    bottom: 95px;
+    font-size: 1.5vw;
+  }
+
+  .maxTemp {
+    top: 20px;
+  }
+
+  .maxText {
+    top: -20px;
+    font-size: 1.5vw;
+  }
+
+  em {
+    font-size: 1.8vw;
+  }
+}

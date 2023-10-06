@@ -1,0 +1,12 @@
+.dayForecastContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  margin-right: 0.5vw;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.dayForecastContainer::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}

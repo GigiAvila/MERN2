@@ -40,7 +40,7 @@ const iconMappings = {
   '04n': icon04n,
   '09n': icon09n,
   '10n': icon10n,
-  '11d': icon11n,
+  '11n': icon11n,
   '13n': icon13n,
   '50n': icon50n
 }

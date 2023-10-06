@@ -19,7 +19,7 @@ import icon10n from '../../assets/icons/10n.png'
 import icon11n from '../../assets/icons/11n.png'
 import icon13n from '../../assets/icons/13n.png'
 import icon50n from '../../assets/icons/50n.png'
-import Thermometer from './ThermoMeter'
+import Thermometer from './Thermometer'
 
 const MONTHS = [
   'January',
@@ -52,7 +52,7 @@ const iconMappings = {
   '04n': icon04n,
   '09n': icon09n,
   '10n': icon10n,
-  '11d': icon11n,
+  '11n': icon11n,
   '13n': icon13n,
   '50n': icon50n
 }

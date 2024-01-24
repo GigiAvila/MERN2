@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div
+    <main
       style={{
         width: '100%',
         height: '100vh'
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Main />
       <Footer />
-    </div>
+    </main>
   )
 }
 

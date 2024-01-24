@@ -16,21 +16,19 @@ const CurrentWeatherPage = () => {
 
   return (
     <div className='nowContainer'>
-      <>
+      <article className='currentWeatherArticle'>
         {location ? <CurrentWeatherOtherCity /> : <CurrentWeatherByLocation />}
-        {currentCity ? (
-          <div
-            className='BGImageContainer'
-            style={{
-              backgroundImage: `url(${
-                isDaytime ? DaySunImage : NightMoonImage
-              })`
-            }}
-          ></div>
-        ) : (
-          <></>
-        )}
-      </>
+      </article>
+      {currentCity ? (
+        <div
+          className='BGImageContainer'
+          style={{
+            backgroundImage: `url(${isDaytime ? DaySunImage : NightMoonImage})`
+          }}
+        ></div>
+      ) : (
+        <></>
+      )}
     </div>
   )
 }
